@@ -8,3 +8,10 @@ services:
     volumes:
       - ./data:/data
     command: ["redis-server", "--save", "60", "1", "--loglevel", "warning", "--dir", "/data"]
+
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis

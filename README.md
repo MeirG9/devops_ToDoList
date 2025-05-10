@@ -1,4 +1,4 @@
-# DevOps Matala 1 – To-Do List Service
+# DevOps Task 1 – To-Do List Service
 
 A simple, containerized To-Do List REST API built with Flask and Redis.  
 Designed to demonstrate best practices in DevOps: version control, branch protection, containerization, data persistence, and collaborative workflows.

@@ -126,12 +126,7 @@ By default, the service listens on port **5000**.
 
 ## Architecture
 
-\`\`\`text
-┌──────────────┐       ┌─────────────────┐       ┌─────────┐
-│   Client     │ ───▶ │   Flask App     │ ───▶ │  Redis  │
-│ (curl/Postman│      │ (app/main.py)   │       │(cache+DB)│
-└──────────────┘       └─────────────────┘       └─────────┘
-\`\`\`
+Client (curl/Postman)    │ ───▶ │   Flask App (app/main.py)    │ ───▶ │  Redis (cache+DB) 
 
 - **Flask App** listens on port 5000, handles HTTP routes, serializes JSON, and communicates with Redis.  
 - **Redis** stores To-Do data under `todo:{id}` keys and manages a `next_todo_id` counter.  

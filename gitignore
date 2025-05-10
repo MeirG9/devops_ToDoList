@@ -1,0 +1,32 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+
+# Redis dump
+*.rdb
+dump.rdb
+
+# Docker artifacts
+*.log
+*.pid
+*.sock
+*.tar
+docker-compose.override.yml
+
+# VSCode & editor configs
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Volumes or bind-mounts
+data/
+redis-data/

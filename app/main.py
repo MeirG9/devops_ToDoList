@@ -19,6 +19,39 @@ def get_next_todo_id():
     r.set('next_todo_id', next_id + 1)
     return next_id
 
+@app.route('/', methods=['GET'])
+def index():
+    """
+    Welcome message and documentation summary for the API root.
+    """
+    return jsonify({
+        "message": "Welcome to the To-Do List API",
+        "version": "1.0",
+        "description": "This RESTful API allows you to manage multiple to-do lists using JSON over HTTP.",
+        "base_url": "http://localhost:5000",
+        "endpoints": {
+            "POST /todo": "Create a new To-Do list",
+            "GET /todo/<id>": "Retrieve a specific To-Do list",
+            "DELETE /todo/<id>": "Delete a specific To-Do list",
+            "GET /todos": "Retrieve all To-Do lists"
+        },
+        "example_request": {
+            "POST /todo": {
+                "content-type": "application/json",
+                "body": {
+                    "tasks": ["Buy groceries", "Finish assignment", "Walk the dog"]
+                }
+            }
+        },
+        "example_response": {
+            "201 Created": {
+                "id": 1,
+                "message": "To-Do List saved successfully"
+            }
+        },
+        "note": "This API only supports JSON. See README.md for full documentation."
+    }), 200
+
 @app.route('/todo', methods=['POST'])
 def add_todo_list():
     """
